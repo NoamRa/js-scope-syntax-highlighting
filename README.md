@@ -1,3 +1,3 @@
-# JavaScript Closure Syntax Highlighting
+# JavaScript Scope Syntax Highlighting
 
-## An attempt to make a syntax highlighter that also colors variable by closure
+## An attempt to make a syntax highlighter that also colors variable by scope

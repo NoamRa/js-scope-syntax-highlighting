@@ -1,14 +1,17 @@
 import React from "react";
 import type { FC } from "react";
 import styled from "styled-components";
+import "./Output.css";
+import htmlParser from "html-react-parser";
 
 const StyledOutput = styled.div`
   width: 90%;
   height: 90%;
   flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
 `;
 
 const StyledPre = styled.pre`
@@ -23,9 +26,11 @@ type OutputProps = {
 const Output: FC<OutputProps> = ({ code, ast }: OutputProps) => {
   return (
     <StyledOutput>
-      <StyledPre>
-        <code>{code.trim()}</code>
-        <hr />
+      <StyledPre className="language-javascript">
+        <code>{htmlParser(code)}</code>
+      </StyledPre>
+      <hr />
+      <StyledPre className="language-json">
         <code>{JSON.stringify(ast, null, 2)}</code>
       </StyledPre>
     </StyledOutput>

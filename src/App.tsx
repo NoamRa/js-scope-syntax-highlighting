@@ -1,10 +1,32 @@
 import React, { useEffect, useState } from "react";
-import Output from "./Components/Output";
-import Input from "./Components/Input";
+import Output from "./components/Output";
+import Input from "./components/Input";
 
 import styled from "styled-components";
 
-import { parse, initialCode } from "./logic/parsing";
+import { analyzeCode } from "./logic/main";
+
+// code taken from Kyle Simposn's You don't know JS
+// https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch2.md
+const initialCode = `
+var students = [
+  { id: 14, name: "Kyle" },
+  { id: 73, name: "Suzy" },
+  { id: 112, name: "Frank" },
+  { id: 6, name: "Sarah" }
+];
+
+function getStudentName(studentID) {
+  for (let student of students) {
+      if (student.id == studentID) {
+          return student.name;
+      }
+  }
+}
+
+var nextStudent = getStudentName(73);
+console.log(nextStudent);
+`.trim();
 
 const PageLayout = styled.main`
   display: flex;
@@ -14,12 +36,14 @@ const PageLayout = styled.main`
 
 function App() {
   const [code, setCode] = useState<string>(initialCode);
+  const [decoratedCode, setDecoratedCode] = useState<string>(initialCode);
   const [ast, setAst] = useState<any>("");
 
   useEffect(() => {
     try {
-      const ast = parse(code);
+      const { ast, decoratedCode } = analyzeCode(code);
       setAst(ast);
+      setDecoratedCode(decoratedCode);
     } catch (error) {
       // console.log(error);
     }
@@ -28,7 +52,7 @@ function App() {
   return (
     <PageLayout>
       <Input code={code} onChange={setCode} />
-      <Output code={code} ast={ast} />
+      <Output code={decoratedCode} ast={ast} />
     </PageLayout>
   );
 }
