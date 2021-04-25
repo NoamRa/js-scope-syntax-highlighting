@@ -12,6 +12,9 @@
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/typescript-estree": "^4.21.0",
     "acorn": "^8.1.0",
+    "eslint-scope": "^5.1.1",
+    "espree": "^7.3.1",
+    "estraverse": "^5.2.0",
     "html-react-parser": "^1.2.5",
     "html-to-react": "^1.4.5",
     "react": "^17.0.2",
@@ -47,6 +50,8 @@
     ]
   },
   "devDependencies": {
+    "@types/eslint-scope": "^3.7.0",
+    "@types/estraverse": "^5.1.0",
     "@types/jest": "^26.0.22",
     "@types/react-html-parser": "^2.0.1",
     "@types/styled-components": "^5.1.9",

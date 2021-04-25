@@ -24,16 +24,20 @@ export function getAncestor(
 }
 
 export type StartEnd = { start: number; end: number };
-export function getStartEndFromNode(node: EnhancedIdentifier): StartEnd {
+export function getStartEndFromNode(node: any): StartEnd {
   if (Number.isInteger(node.start) && Number.isInteger(node.end)) {
     return {
       start: node.start,
       end: node.end,
     };
+  } else if (Array.isArray(node.ranges) && node.ranges.length === 2) {
+    return {
+      start: node.ranges[0],
+      end: node.ranges[1],
+    };
   }
   throw new Error("Filed to find ");
 }
-
 
 export function sameObjects(objA: object, objB: object): boolean {
   // good enough for now...

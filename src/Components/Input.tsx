@@ -11,6 +11,8 @@ const StyledInput = styled.div`
 const FullTextArea = styled.textarea`
   width: 95%;
   height: 100%;
+  color: inherit;
+  background-color: inherit;
 `;
 
 type InputProps = {

@@ -1,3 +1,25 @@
 .language-javascript .global {
-  color: red;
+  color: maroon;
+}
+
+.language-javascript .identifier-1 {
+  color: yellow;
+}
+.language-javascript .identifier-2 {
+  color: fuchsia;
+}
+.language-javascript .identifier-3 {
+  color: green;
+}
+.language-javascript .identifier-4 {
+  color: orange;
+}
+.language-javascript .identifier-5 {
+  color: aqua;
+}
+.language-javascript .identifier-6 {
+  color: chartreuse;
+}
+.language-javascript .identifier-7 {
+  color: crimson;
 }

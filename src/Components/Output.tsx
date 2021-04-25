@@ -8,15 +8,12 @@ const StyledOutput = styled.div`
   width: 90%;
   height: 90%;
   flex-grow: 1;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // flex-direction: column;
 `;
 
 const StyledPre = styled.pre`
   width: 100%;
   height: 100%;
+  margin: 0 0 10px 0;
 `;
 
 type OutputProps = {

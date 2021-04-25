@@ -1,5 +1,12 @@
-import { EnhancedIdentifier } from "./types";
+import { EnhancedIdentifier, ScopeTag } from "./types";
 import { getStartEndFromNode, StartEnd } from "./utils";
+
+function getClassForTag(tag: ScopeTag): string {
+  if (tag.id === -1) {
+    return "global";
+  }
+  return `identifier-${tag.id}`
+}
 
 export function decorateToken(
   code: string,
@@ -28,7 +35,7 @@ export function decorateCode(
         decorateToken(
           currenctCode,
           getStartEndFromNode(identifier),
-          "global", // TODO
+          getClassForTag(identifier.tag),
         ),
       code,
     );

@@ -1,3 +1,5 @@
 # JavaScript Scope Syntax Highlighting
 
-## An attempt to make a syntax highlighter that also colors variable by scope
+## A syntax highlighter that also colors variable by scope
+
+![basic example](./src/docs/example.png "syntax highlighting simple example")

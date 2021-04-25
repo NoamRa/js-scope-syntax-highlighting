@@ -29,9 +29,10 @@ console.log(nextStudent);
 `.trim();
 
 const PageLayout = styled.main`
+  padding: 1rem;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
+  color: #d6d6d6;
+  background-color: #2e2e2e;
 `;
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
       setAst(ast);
       setDecoratedCode(decoratedCode);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
   }, [code]);
 
